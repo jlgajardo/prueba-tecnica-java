@@ -1,0 +1,33 @@
+myapp:
+  properties:
+    fake: deleteme
+  datasources:
+    sqlserver:
+      jdbc-url: jdbc:sqlserver://localhost:1433;database=tPruebaTecnica
+      username: sa
+      password: Pass!@word
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  sp:
+    facturas: SP_facturas
+    productos: SP_productos
+    ventas: SP_ventas
+    compras: SP_compras
+
+spring:
+  jpa:
+    database: sql-server
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  jackson:
+    serialization:
+      indent-output: true
+  application:
+    name: api-prueba-tecnica
+  jmx:
+    default-domain: api-prueba-tecnica
+
+info:
+  version: "v1"
+server:
+  port: 8857
